@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Property Price Prediction</title>
+</head>
+<body>
+    <h1><div style="text-align: center"> <font color="blue" > Property Price Prediction </font></div></h1>
+    <br>
+    <h2><div style="text-align: center"> This application allows you to predict the price of the property </div></h2>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="MSSubClass">House Type: </label>
+                        <select name="home" id="home">
+                            <optgroup label="1-story">
+                                <option value="1-STORY 1946 & NEWER ALL STYLES">1-STORY 1946 & NEWER ALL STYLES</option>
+                                <option value="1-STORY 1945 & OLDER">1-STORY 1945 & OLDER</option>
+                                <option value="1-STORY W/FINISHED ATTIC ALL AGES">1-STORY W/FINISHED ATTIC ALL AGES</option>
+                                <option value="1-1/2 STORY - UNFINISHED ALL AGES">1-1/2 STORY - UNFINISHED ALL AGES</option>
+                                <option value="1-1/2 STORY FINISHED ALL AGES">1-1/2 STORY FINISHED ALL AGES</option>
+                            </optgroup>
+                            <optgroup label="2-story">
+                                <option value="2-STORY 1946 & NEWER">2-STORY 1946 & NEWER</option>
+                                <option value="2-STORY 1945 & OLDER">2-STORY 1945 & OLDER</option>
+                                <option value="2-1/2 STORY ALL AGES">2-1/2 STORY ALL AGES</option>
+                          </optgroup>
+                          <optgroup label="Split">
+                               <option value="SPLIT OR MULTI-LEVELR">SPLIT OR MULTI-LEVEL</option>
+                               <option value="SPLIT FOYER">SPLIT FOYER</option>
+                          </optgroup>
+                          <optgroup label="DUPLEX">
+                               <option value="DUPLEX">DUPLEX</option>    
+                          </optgroup>
+                          <optgroup label="Planned Unit Development">
+                               <option value="1-STORY PUD - 1946 & NEWER">1-STORY PUD - 1946 & NEWER</option>
+                               <option value="1-1/2 STORY PUD - ALL AGES">1-1/2 STORY PUD - ALL AGES</option>
+                               <option value="2-STORY PUD - 1946 & NEWER">2-STORY PUD - 1946 & NEWER</option>
+                               <option value="PUD - MULTILEVEL - INCL SPLIT LEV/FOYER">PUD - MULTILEVEL - INCL SPLIT LEV/FOYER</option>
+                          <option value="2 FAMILY CONVERSION - ALL STYLES AND AGES">2 FAMILY CONVERSION - ALL STYLES AND AGES</option>
+                          </optgroup>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="MSZoning">Zone Type: </label>
+                        <select name="Zone" id="Zone">
+                            <option value="Agriculture">AgricultureS</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Industrial">Industrial</option>
+                            <option value="Residential High Density">1-1/2 STORY - UNFINISHED ALL AGES</option>
+                            <option value="Residential Low Density">Residential Low Density</option>
+                            <option value="Residential Low Density Park">Residential Low Density Park</option>
+                            <option value="Residential Medium Density">Residential Medium Density</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="Exterior">Exterior Condition:</label>
+                        <select name="Exterior" id="Condition">
+                            <option value="Ex">Excellent</option>
+                            <option value="Gd">Good</option>
+                            <option value="TA">Average/Typical</option>
+                            <option value="Fa">Fair</option>
+                            <option value="Po">Poor</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="BasementCD">Basement Condition:</label>
+                        <select name="BasementCD" id="BasementCD">
+                            <option value="Ex">Excellent</option>
+                            <option value="Gd">Good</option>
+                            <option value="TA">Typical - slight dampness allowed</option>
+                            <option value="Fa">Fair - dampness or some cracking or settling</option>
+                            <option value="Po">Poor - Severe cracking, settling, or wetness</option>
+                            <option value="NO">No Basement</option> 
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="HeatingQuality">Heating Quality</label>
+                        <select name="Heating" id="HeatingQC">
+                            <option value="Ex">Excellent</option>
+                            <option value="Gd">Good</option>
+                            <option value="TA">Average/Typical</option>
+                            <option value="Fa">Fair</option>
+                            <option value="Po">Poor</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="KitchenQuality">Kitchen Quality</label>
+                        <select name="KitchenQC" id="KitchenQC">
+                            <option value="Ex">Excellent</option>
+                            <option value="Gd">Good</option>
+                            <option value="TA">Average/Typical</option>
+                            <option value="Fa">Fair</option>
+                            <option value="Po">Poor</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="FireplaceQC"> Fireplace Quality</label>
+                        <select name="FireplaceQC" id="FireplaceQC">
+                            <option value="Ex">Exceptional Masonry Fireplace</option>
+                            <option value="Gd">Masonry Fireplace in main level</option>
+                            <option value="TA">Prefabricated Fireplace in main living area or Masonry Fireplace in basement</option>
+                            <option value="Fa">Prefabricated Fireplace in basement</option>
+                            <option value="Po">Ben Franklin Stove</option>
+                            <option value="NO">No Fireplace</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="PoolQC">Pool Quality</label>
+                        <select name="PoolQC" id="PoolQC">
+                            <option value="Ex">Excellent</option>
+                            <option value="Gd">Good</option>
+                            <option value="TA">Average/Typical</option>
+                            <option value="Fa">Fair</option>
+                            <option value="NO">No Pool</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="PavedDrive">Driveway</label>
+                        <select name="PavedDrive" id="PavedDrive">
+                            <option value="Y">Paved</option>
+                            <option value="P">Partial Pavement</option>
+                            <option value="N">Dirt/Gravel</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="Utilities">Utilities Available</label>
+                        <select name="Utilities" id="Utilities">
+                            <option value="AllPub">All public Utilities (E,G,W,& S)</option>
+                            <option value="NoSewr">Electricity, Gas, and Water (Septic Tank)</option>
+                            <option value="NoSeWa">Electricity and Gas Only</option>
+                            <option value="ELO">Electricity only</option>
+                        </select>
+                    </div>
+                    <input class="btn btn-primary" onclick="sfun()" type="submit" value="Predict">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
